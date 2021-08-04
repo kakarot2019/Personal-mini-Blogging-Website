@@ -3,14 +3,16 @@
 <h1>Compose</h1>
 
 <form action="/compose" method="POST">
-    
-    
-        <p>Title</p>
-        <input type="text" placeholder="Write here" name="note" >
-    
-        <p>Description</p>
-        <textarea rows="4" cols="100" name="description">Write here</textarea>
-    
+    <div class="form-group">
+        <label class="label ml-0" for="title">Title</label>
+        <input type="text" placeholder="Write here" id="title" name="title" >   
+        
+    </div>
+      <div class="form-group">
+        <label class="label ml-0" for="description">Description</label>
+        <textarea rows="4" cols="100" name="description"></textarea>
+        
+    </div>
         
     <div><button class="btn btn-primary d-block"  type="submit">Publish</button></div>
 </form>
