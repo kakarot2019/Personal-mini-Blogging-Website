@@ -30,14 +30,15 @@ app.get("/contact", function(req,res){
 app.get("/compose", function(req,res){
   res.render("compose");
 });
-app.get("/posts/:something", function(req,res){
+app.get("/posts/:customURL", function(req,res){
   posts.forEach(function(post){
-    if(lodash.lowerCase(post.title) === lodash.lowerCase(req.params.something))
+    if(lodash.lowerCase(post.title) === lodash.lowerCase(req.params.customURL))
       res.render("post" , post);
   });
 })
 
 app.post("/compose" , function(req,res){
+  //we create a post object to send both title and desciption to the home page using ejs
   const post = {
     title : req.body.title,
     description : req.body.description,
